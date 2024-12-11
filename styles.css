@@ -3,6 +3,7 @@ body {
     background-color: #f4f4f9;
     color: #333;
     padding: 20px 50px;
+    justify-items: center;
 }
 
 .container {
@@ -49,8 +50,12 @@ button:hover {
 }
 
 #productTable {
-    border: 1px solid green;
     font-size: 1.5em;
+    width: 80%;
+}
+
+#productTable th {
+    text-align: left;
 }
 
 #productTable th, td {
