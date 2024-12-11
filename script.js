@@ -14,14 +14,14 @@ class ProductProperties {
     toString() {
         return `Product: ${this.name}, Price: ${this.price}, Quantity: ${this.quantity}`;
     }
+
+    //static discount
+    static applyDiscount(products, discount) {
+        products.forEach(product => {
+            product.price -= product.price * discount;
+        });
+    }
 }
-
-//list product
-const product = new ProductProperties("Apple", 2.5, 50);
-
-//output
-console.log(product.getTotalValue());
-console.log(product.toString());
 
 //adding inheritance
 class PerishableProductProperties extends ProductProperties {
@@ -37,10 +37,18 @@ class PerishableProductProperties extends ProductProperties {
     }
 }
 
-//list perishable
+//list of products
+const apple = new ProductProperties("Apple", 2.5, 50);
+const banana = new ProductProperties("Banana", 1.8, 10);
+const cereal = new PerishableProductProperties("Cereal", 2.5, 2, "2025-02-05");
 const milk = new PerishableProductProperties("Milk", 1.5, 10, "2025-01-10");
 const bread = new PerishableProductProperties("Bread", 1.5, 2, "2024-12-30");
 
-//output
-console.log(milk.toString());
-console.log(bread.toString());
+//array discount
+const products = [cereal, milk, bread];
+
+//apply discount
+ProductProperties.applyDiscount(products, 0.05);
+
+//log update product information
+products.forEach(product => console.log(product.toString()));
