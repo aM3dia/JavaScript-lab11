@@ -111,14 +111,16 @@ function getInventoryValue() {
 //display products
 function displayProducts() {
     const productList = document.getElementById('productList');
-    productList.innerHTML = '';  // Clear existing list
+    productList.innerHTML = '';  // Clear existing table rows
     products.forEach(product => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${product.name} - $${product.price.toFixed(2)} x ${product.quantity}`;
-        if (product.expirationDate) {
-            listItem.textContent += `, Expiration Date: ${product.expirationDate}`;
-        }
-        productList.appendChild(listItem);
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${product.name}</td>
+            <td>$${product.price.toFixed(2)}</td>
+            <td>${product.quantity}</td>
+            <td>${product.expirationDate || 'N/A'}</td>
+        `;
+        productList.appendChild(row);
     });
 }
 
