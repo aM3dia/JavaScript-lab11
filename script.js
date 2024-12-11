@@ -137,6 +137,20 @@ function updateInventoryValue() {
     const inventoryValue = getInventoryValue();
     document.getElementById('inventoryValue').textContent = `After Discount: $${inventoryValue.toFixed(2)}`;
 }
-
+//find product
+function searchProduct() {
+    const searchInput = document.getElementById('productSearch').value.toLowerCase();
+    const product = products.find(p => p.name.toLowerCase() === searchInput);
+    //find and print product
+    const searchResult = document.getElementById('searchResult');
+    if (product) {
+        searchResult.textContent = `${product.name} - $${product.price.toFixed(2)} x ${product.quantity}`;
+        if (product.expirationDate) {
+            searchResult.textContent += `, Expiration Date: ${product.expirationDate}`;
+        }
+    } else {
+        searchResult.textContent = "Product not found.";
+    }
+}
 //default display
 displayProducts();
