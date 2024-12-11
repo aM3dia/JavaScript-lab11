@@ -21,10 +21,36 @@ h2 {
     font-size: 1.5em;
 }
 
+.inventory-summary {
+    background-color: #e1e1e1;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 2px solid black;
+}
+
+#inventoryValue {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0088cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #00699e;
+}
+
 #productTable {
     border: 1px solid green;
     font-size: 1.5em;
-    justify-content: center;
 }
 
 #productTable th, td {
