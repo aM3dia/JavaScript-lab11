@@ -108,6 +108,19 @@ const products = [
 function getInventoryValue() {
     return products.reduce((total, product) => total + product.price * product.quantity, 0);
 }
+//display products
+function displayProducts() {
+    const productList = document.getElementById('productList');
+    productList.innerHTML = '';  // Clear existing list
+    products.forEach(product => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${product.name} - $${product.price.toFixed(2)} x ${product.quantity}`;
+        if (product.expirationDate) {
+            listItem.textContent += `, Expiration Date: ${product.expirationDate}`;
+        }
+        productList.appendChild(listItem);
+    });
+}
 
 //default display
 displayProducts();
