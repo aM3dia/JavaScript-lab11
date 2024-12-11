@@ -122,5 +122,21 @@ function displayProducts() {
     });
 }
 
+//15% discount
+function applyDiscount() {
+    products.forEach(product => {
+        product.price -= product.price * 0.15;
+    });
+    //updated inventory value and product list
+    updateInventoryValue();
+    displayProducts();
+}
+
+//updated inventory information after discount
+function updateInventoryValue() {
+    const inventoryValue = getInventoryValue();
+    document.getElementById('inventoryValue').textContent = `After Discount: $${inventoryValue.toFixed(2)}`;
+}
+
 //default display
 displayProducts();
