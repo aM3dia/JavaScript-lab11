@@ -8,14 +8,15 @@
     <title>Store Management System</title>
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>Store Inventory</h1>
+    </header>
+    <main>
         <div class="inventory-summary">
             <h2>Total Inventory Value</h2>
             <p id="inventoryValue">Before Discount: $180.00</p>
             <button onclick="applyDiscount()">Apply 15% Discount</button>
         </div>
-    </div>
     <!--display products-->
     <h2>Product List</h2>
     <table id="productTable">
@@ -38,5 +39,9 @@
         <button onclick="searchProduct()">Search</button>
         <p id="searchResult"></p>
     </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Anupa Ragoonanan</p>
+    </footer>
 </body>
 </html>
