@@ -2,23 +2,27 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     color: #333;
-    padding: 20px 50px;
+    justify-items: center;
+    margin: 0;
+}
+
+header, footer {
+    width: 100%;
+    margin: 0 0 10px 0;
+    padding: 10px;
+    text-align: center;
+    background-color: #0088cc;
+    color: white;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
     justify-items: center;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-h1 {
-    text-align: center;
-    color: #333;
-}
-
 h2 {
-    margin-top: 20px;
+    margin-top: 0px;
     font-size: 1.5em;
 }
 
@@ -28,6 +32,8 @@ h2 {
     margin-bottom: 20px;
     border-radius: 8px;
     border: 2px solid black;
+    width: 50%;
+    justify-items: center;
 }
 
 #inventoryValue {
