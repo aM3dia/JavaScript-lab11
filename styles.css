@@ -58,6 +58,7 @@ button:hover {
 #productTable {
     font-size: 1.5em;
     width: 80%;
+    border: 1px solid black;
 }
 
 #productTable th {
@@ -67,4 +68,18 @@ button:hover {
 #productTable th, td {
     border: 1px solid black;
     margin: 20px;
+}
+
+h3 {
+    margin-bottom: 0;
+}
+
+.search-section {
+    justify-items: center;
+}
+
+#productSearch {
+    height: 30px;
+    width: 200px;
+    font-size: 1em;
 }
