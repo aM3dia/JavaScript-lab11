@@ -12,7 +12,7 @@ class ProductProperties {
     }
     
     toString() {
-        return `Product: ${this.name}, Price: ${this.price}, Quantity: ${this.quantity}`;
+        return `Product: ${this.name}, Price: ${this.price.toFixed(2)}, Quantity: ${this.quantity}`;
     }
 
     //static discount
@@ -76,18 +76,20 @@ store.addProducts(milk);
 store.addProducts(bread);
 store.addProducts(cheese);
 
-//array discount
-const products = [cereal, milk, bread];
+//total inventory value before discount
+console.log("Total inventory value before discount: $" + store.getInventoryValue().toFixed(2));
 
-//apply discount
-ProductProperties.applyDiscount(products, 0.05);
+//15% discount
+ProductProperties.applyDiscount(store.inventory, 0.15);
 
-//log update product information
-products.forEach(product => console.log(product.toString()));
+//updated inventory information after discount
+console.log("Updated Product Information:");
+store.inventory.forEach(product => console.log(product.toString()));
 
-//log total inventory value
-console.log("Total inventory value is $" + store.getInventoryValue());
+//total inventory value after discount
+console.log("Total inventory value after discount: $" + store.getInventoryValue().toFixed(2));
 
-//find a product
-const foundProduct = store.findProductByName("apple");
+//find and print product
+const foundProduct = store.findProductByName("Apple");
+console.log("Found Product:");
 console.log(foundProduct ? foundProduct.toString() : "Product not found");
