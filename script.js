@@ -1,4 +1,4 @@
-//setting up classes
+/*setting up classes
 class ProductProperties {
     //inititalize the properties
     constructor(name, price, quantity) {
@@ -92,4 +92,22 @@ console.log("Total inventory value after discount: $" + store.getInventoryValue(
 //find and print product
 const foundProduct = store.findProductByName("Apple");
 console.log("Found Product:");
-console.log(foundProduct ? foundProduct.toString() : "Product not found");
+console.log(foundProduct ? foundProduct.toString() : "Product not found");*/
+
+//list of products
+const products = [
+    { name: "Apple", price: 2.5, quantity: 50 },
+    { name: "Banana", price: 1.8, quantity: 10 },
+    { name: "Cereal", price: 2.5, quantity: 2, expirationDate: "2025-02-05" },
+    { name: "Milk", price: 1.5, quantity: 10, expirationDate: "2025-01-10" },
+    { name: "Bread", price: 1.5, quantity: 2, expirationDate: "2024-12-30" },
+    { name: "Cheese", price: 7.0, quantity: 2, expirationDate: "2025-01-01" }
+];
+
+//total inventory value before discount
+function getInventoryValue() {
+    return products.reduce((total, product) => total + product.price * product.quantity, 0);
+}
+
+//default display
+displayProducts();
