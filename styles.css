@@ -3,14 +3,12 @@ body {
     background-color: #f4f4f9;
     color: #333;
     padding: 20px 50px;
-    border: 1px solid red;
 }
 
 .container {
     width: 80%;
     margin: 0 auto;
     max-width: 1200px;
-    border: 1px solid black;
 }
 
 h1 {
@@ -23,6 +21,13 @@ h2 {
     font-size: 1.5em;
 }
 
-#productList {
+#productTable {
     border: 1px solid green;
+    font-size: 1.5em;
+    justify-content: center;
+}
+
+#productTable th, td {
+    border: 1px solid black;
+    margin: 20px;
 }
